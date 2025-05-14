@@ -1,9 +1,97 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head>
-    <title>Il mio sito web</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FSDA Toolbox™</title>
+    <style>
+        /* Base CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+            text-decoration: none;
+            color: #007BFF;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #007BFF;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            header {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Ciao, benvenuto sul mio sito web!</h1>
+    <!-- Header with Logo and Navigation Menu -->
+    <header>
+        <a href="#" class="logo">FSDA Toolbox™</a>
+        <nav>
+            <a href="#">HOME</a>
+            <a href="#">SOFTWARE</a>
+            <a href="#">RESEARCH</a>
+            <a href="#">EDUCATION</a>
+            <a href="#">PROJECTS</a>
+            <a href="#">RESOURCES</a>
+            <a href="#">EVENTS</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section (es. se desideri aggiungere un'elevata sezione iniziale) -->
+    <section style="padding: 60px 20px; text-align: center;">
+        <h1 style="font-size: 2.5em; margin-bottom: 10px;">
+            Flexible Statistics Data Analysis Toolbox™
+        </h1>
+        <p style="font-size: 1.2em; max-width: 800px; margin: 0 auto;">
+            Grouping, clustering, complex correlations. It has never been easier to work with robust statistics.
+        </p>
+    </section>
 </body>
 </html>
