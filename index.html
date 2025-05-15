@@ -3,95 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FSDA Toolbox™</title>
-    <style>
-        /* Base CSS */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-        }
-
-        header {
-            background-color: #333;
-            color: white;
-            padding: 15px 30px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-        }
-
-        .logo {
-            font-size: 1.8em;
-            font-weight: bold;
-            text-decoration: none;
-            color: #007BFF;
-        }
-
-        nav {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: #007BFF;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            header {
-                flex-direction: column;
-                text-align: center;
-                padding: 20px 20px;
-            }
-        }
-    </style>
+    <title>FSDA - Flexible Statistics Data Analysis Toolbox</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header with Logo and Navigation Menu -->
+    <!-- Intestazione con logo e titolo -->
     <header>
-        <a href="#" class="logo">FSDA Toolbox™</a>
-        <nav>
-            <a href="#">HOME</a>
-            <a href="#">SOFTWARE</a>
-            <a href="#">RESEARCH</a>
-            <a href="#">EDUCATION</a>
-            <a href="#">PROJECTS</a>
-            <a href="#">RESOURCES</a>
-            <a href="#">EVENTS</a>
-        </nav>
-    </header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container">
+                    <img src="img/logo.png" alt="FSDA Logo" class="logo">
+                </div>
+                
+                <div class="title-container">
+                    <h1 class="title">Flexible Statistics Data Analysis Toolbox™</h1>
+                    <p class="subtitle">Grouping, clustering, complex correlations. <br>It has never been easier to work with robust statistics.</p>
+                </div>
 
-    <!-- Hero Section (es. se desideri aggiungere un'elevata sezione iniziale) -->
-    <section style="padding: 60px 20px; text-align: center;">
-        <h1 style="font-size: 2.5em; margin-bottom: 10px;">
-            Flexible Statistics Data Analysis Toolbox™
-        </h1>
-        <p style="font-size: 1.2em; max-width: 800px; margin: 0 auto;">
-            Grouping, clustering, complex correlations. It has never been easier to work with robust statistics.
-        </p>
+                <div class="logo-container">
+                    <img src="img/unipr_ec.png" alt="FSDA Logo" class="logo">
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Menu di navigazione con gradiente diverso -->
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <ul class="nav-menu">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="software.html">Software</a></li>
+                    <li><a href="#">Research</a></li>
+                    <li><a href="#">Education</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Resources</a></li>
+                    <li><a href="#">Events</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- HTML per la sezione show reel con video YouTube -->
+    <section class="showreel">
+        <div class="container">
+            <div class="showreel-container">
+                <!-- Container del video con YouTube embed -->
+                <div class="video-container">
+                    <div class="video-wrapper">
+                        <iframe 
+                            src="https://www.youtube.com/embed/EgZrJN-V6i8?rel=0" 
+                            title="FSDA Tutorial Video" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+                
+                <!-- Container del testo -->
+                <div class="text-container">
+                    <h3>FSDA Toolbox™</h3>
+                    <p>provides statisticians, engineers, scientists, researchers, financial analysts with a comprehensive set of tools to assess and understand their data. The software includes functions and interactive tools for analyzing and modeling data, learning and teaching statistics.</p>
+                    
+                    <p>It supports a set of routines to develop robust and efficient regression analysis. In addition, it offers a rich set interactive graphical tools which enable us to explore the connection in the various features of the different forward plots.</p>
+                    
+                    <p>All functions are written in the open MATLAB® language. This means that you can inspect the algorithms, modify the source code, and create your own custom functions.</p>
+                </div>
+            </div>
+            
+            <!-- Paginazione -->
+            <div class="showreel-pagination">
+                <div class="pagination-arrow">◀</div>
+                <div class="pagination-dots">
+                    <div class="pagination-dot active">1</div>
+                    <div class="pagination-dot">2</div>
+                    <div class="pagination-dot">3</div>
+                    <div class="pagination-dot">4</div>
+                </div>
+            </div>
+        </div>
     </section>
+    <!-- Sezione "Website sections" -->
+    <section class="website-sections">
+        <div class="container">
+            <h2 class="section-title">Website sections</h2>
+            
+            <div class="section-boxes">
+                <!-- SOFTWARE -->
+                <div class="section-box">
+                    <div class="icon-container">
+                        <img src="img/software.png" alt="Software icon">
+                    </div>
+                    <div class="section-content">
+                        <h3>SOFTWARE</h3>
+                        <p>Everything related to the software documentation.</p>
+                        <div class="section-links">
+                            <a href="#">Introduction</a>,
+                            <a href="#">Requirements</a>,
+                            <a href="#">How to start</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- RESEARCH -->
+                <div class="section-box">
+                    <div class="icon-container">
+                        <img src="img/research.png" alt="Research icon">
+                    </div>
+                    <div class="section-content">
+                        <h3>RESEARCH</h3>
+                        <p>Papers, Bibliography, videos and community</p>
+                        <div class="section-links">
+                            <a href="#">Introduction</a>,
+                            <a href="#">Requirements</a>,
+                            <a href="#">How to start</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- EDUCATION -->
+                <div class="section-box">
+                    <div class="icon-container">
+                        <img src="img/education.png" alt="Education icon">
+                    </div>
+                    <div class="section-content">
+                        <h3>EDUCATION</h3>
+                        <p>Papers, Bibliography, videos and community</p>
+                        <div class="section-links">
+                            <a href="#">Introduction</a>,
+                            <a href="#">Requirements</a>,
+                            <a href="#">How to start</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- PROJECTS -->
+                <div class="section-box">
+                    <div class="icon-container">
+                        <img src="img/projects.png" alt="Projects icon">
+                    </div>
+                    <div class="section-content">
+                        <h3>PROJECTS</h3>
+                        <p>Public policies, Industrial application</p>
+                        <div class="section-links">
+                            <a href="#">Introduction</a>,
+                            <a href="#">Requirements</a>,
+                            <a href="#">How to start</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- RESOURCES -->
+                <div class="section-box">
+                    <div class="icon-container">
+                        <img src="img/resources.png" alt="Resources icon">
+                    </div>
+                    <div class="section-content">
+                        <h3>RESOURCES</h3>
+                        <p>Public policies, Industrial application</p>
+                        <div class="section-links">
+                            <a href="#">Introduction</a>,
+                            <a href="#">Requirements</a>,
+                            <a href="#">How to start</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Il resto del contenuto della pagina andrà qui -->
 </body>
 </html>

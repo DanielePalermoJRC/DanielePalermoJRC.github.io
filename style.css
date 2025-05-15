@@ -1,0 +1,325 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Stile per l'intestazione con gradiente */
+header {
+    background: linear-gradient(to right, #c3c72c, #1e5799, #02172f);
+    color: white;
+    padding: 20px 0;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    max-width: 120px;
+    height: auto;
+}
+
+/* Linea verticale di separazione */
+.vertical-line {
+    height: 50px;
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.7);
+    margin: 0 20px;
+}
+
+.title-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 100px 0 30px;
+    width:100%;
+}
+
+.title {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.subtitle {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Stile per il menu di navigazione con gradiente diverso */
+nav {
+    background: linear-gradient(to right, #588980,#0f4679, #02172f);
+    padding: 10px 0;
+}
+
+.nav-container {
+    display: flex;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav-menu li {
+    margin: 0 15px;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    padding: 5px 10px;
+}
+
+.nav-menu a:hover {
+    color: #f0f0f0;
+    text-decoration: underline;
+}
+
+/* Stili per la sezione Website sections */
+.website-sections {
+    padding: 40px 9rem;
+    background-color: #f9f9f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-title {
+    color: #333366;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+    padding-left: 15px; /* Allinea con i box */
+}
+
+.section-boxes {
+    display: flex;
+    flex-direction: column; /* Disposizione in colonna verticale */
+    align-items: flex-start; /* Allineamento a sinistra */
+    max-width: 800px; /* Larghezza massima per i box */
+}
+
+.section-box {
+    display: flex;
+    width: 100%;
+    margin-bottom: 25px;
+    align-items: flex-start;
+}
+
+.icon-container {
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+    flex-shrink: 0;
+    border: 1px solid #ddd; /* Bordo attorno all'icona come mostrato nell'immagine */
+}
+
+.icon-container img {
+    width: 100%;
+    height: auto;
+}
+
+.section-content {
+    flex-grow: 1;
+}
+
+.section-content h3 {
+    color: #333366;
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.section-content p {
+    margin-bottom: 10px;
+}
+
+.section-links a {
+    color: #1e88e5;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.section-links a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .vertical-line {
+        height: 1px;
+        width: 80%;
+        margin: 15px auto;
+    }
+    
+    .title {
+        font-size: 1.8rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .nav-menu li {
+        margin: 5px 0;
+    }
+    
+    .section-box {
+        padding: 0 15px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+    .title {
+        font-size: 2rem;
+    }
+}
+
+.showreel {
+    background: linear-gradient(to right, #f7f6e7, #cfd9e4);
+    border-bottom: 1px solid #e5e5e5;
+    padding: 40px 9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.showreel-container {
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+gap: 30px;
+}
+
+.video-container {
+flex: 1;
+min-width: 300px;
+position: relative;
+box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Questa classe mantiene il rapporto d'aspetto del video a 16:9 */
+.video-wrapper {
+position: relative;
+padding-bottom: 56.25%; /* Rapporto d'aspetto 16:9 */
+height: 0;
+overflow: hidden;
+}
+
+.video-wrapper iframe {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+border: none;
+}
+
+.text-container {
+flex: 1.5;
+min-width: 300px;
+}
+
+.text-container h3 {
+color: #1e5799;
+font-size: 1.3rem;
+margin-bottom: 15px;
+}
+
+.text-container p {
+margin-bottom: 15px;
+line-height: 1.6;
+font-size: 0.95rem;
+}
+
+.showreel-pagination {
+margin-top: 20px;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 5px;
+}
+
+.pagination-arrow {
+width: 30px;
+height: 30px;
+background-color: #fff;
+border: 1px solid #ddd;
+border-radius: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
+cursor: pointer;
+}
+
+.pagination-dots {
+display: flex;
+gap: 5px;
+}
+
+.pagination-dot {
+width: 25px;
+height: 25px;
+border: 1px solid #ddd;
+background-color: #fff;
+color: #666;
+display: flex;
+justify-content: center;
+align-items: center;
+cursor: pointer;
+font-size: 0.8rem;
+}
+
+.pagination-dot.active {
+background-color: #1e5799;
+color: white;
+border-color: #1e5799;
+}
+
+/* Responsive design per la sezione showreel */
+@media (max-width: 768px) {
+.showreel-container {
+    flex-direction: column;
+}
+
+.video-container, .text-container {
+    width: 100%;
+}
+}
