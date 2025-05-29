@@ -57,8 +57,8 @@
             <div class="nav-container">
                 <ul class="nav-menu">
                     <li><a href="./index.html">Home</a></li>
-                    <li><a href="#" class="active">Software</a></li>
-                    <li><a href="./research.html">Research</a></li>
+                    <li><a href="./software.html" >Software</a></li>
+                    <li><a href="#" class="active">Research</a></li>
                     <!--<li><a href="#">Education</a></li>
                     <li><a href="#">Projects</a></li>
                     <li><a href="#">Resources</a></li>-->
@@ -72,17 +72,17 @@
         <!-- Sidebar sinistra -->
             <aside class="sidebar">
                 <ul class="sidebar-menu">
-                    <li class="active" data-page="documentation">
-                        <a href="#" onclick="loadContent('documentation')">FSDA Documentation</a>
+                    <li class="active" data-page="function">
+                        <a href="#" onclick="loadContent('function')">Function</a>
                     </li>
-                    <li data-page="getting-started">
-                        <a href="#" onclick="loadContent('getting-started')">Getting Started</a>
+                    <li data-page="dataset">
+                        <a href="#" onclick="loadContent('dataset')">Dataset</a>
                     </li>
-                    <li data-page="release-note">
-                        <a href="#" onclick="loadContent('release-note')">release-note</a>
+                    <li data-page="bibliography">
+                        <a href="#" onclick="loadContent('bibliography')">Bibliography</a>
                     </li>
-                    <li data-page="tutorials">
-                        <a href="#" onclick="loadContent('tutorials')">Tutorials</a>
+                    <li data-page="examples">
+                        <a href="#" onclick="loadContent('examples')">Examples</a>
                     </li>
                 </ul>
             </aside>
@@ -149,24 +149,27 @@
                     ];
 
             switch (page) {
-                case 'documentation':
-                    loadGitHubREADME();
-                    break;
-                case 'getting-started':
+                case 'function':
                     loadContentAndHideElements(
-                        'http://rosa.unipr.it/FSDA/getting-started.html',
+                        'http://rosa.unipr.it/FSDA/function-cate.html',
                         elementsToHide
                     );
                     break;
-                case 'tutorials':
+                case 'dataset':
                     loadContentAndHideElements(
-                        'http://rosa.unipr.it/FSDA/tutorials.html',
+                        'http://rosa.unipr.it/FSDA/datasets.html',
                         elementsToHide
                     );
                     break;
-                case 'release-note':
+                case 'bibliography':
                     loadContentAndHideElements(
-                        'http://rosa.unipr.it/FSDA/release_notes.html',
+                        'http://rosa.unipr.it/FSDA/bibliography.html',
+                        elementsToHide
+                    );
+                    break;
+                case 'examples':
+                    loadContentAndHideElements(
+                        'http://rosa.unipr.it/FSDA/examples.html',
                         elementsToHide
                     );
                     break;
@@ -361,7 +364,7 @@
 
         // Carica il contenuto di default all'avvio della pagina
         document.addEventListener('DOMContentLoaded', function () {
-            loadContent('documentation'); // Carica la sezione software di default
+            loadContent('function'); // Carica la sezione software di default
         });
 
         // Gestione click sul menu principale "Software"
@@ -375,7 +378,7 @@
                     // Aggiungi active al link software
                     this.classList.add('active');
                     // Carica il contenuto software di default
-                    loadContent('documentation');
+                    loadContent('function');
                 });
             }
         });
