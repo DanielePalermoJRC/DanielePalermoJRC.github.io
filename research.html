@@ -158,7 +158,7 @@
                 case 'dataset':
                     loadContentAndHideElements(
                         'http://rosa.unipr.it/FSDA/datasets.html',
-                        elementsToHide
+                        elementsToHide,true
                     );
                     break;
                 case 'bibliography':
@@ -176,25 +176,6 @@
                 default:
                     contentDiv.innerHTML = '<h1>Contenuto non trovato</h1>';
             }
-        }
-
-        // Funzione per caricare il file markdownsoftware.html
-        function loadMarkdownFile(filename) {
-            fetch(filename)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    return response.text();
-                })
-                .then(html => {
-                    document.getElementById('software-content').innerHTML = html;
-                })
-                .catch(err => {
-                    console.error("Errore nel caricamento del file markdown: ", err);
-                    document.getElementById('software-content').innerHTML =
-                        '<p>Errore nel caricamento del contenuto del software.</p>';
-                });
         }
 
         // Funzione per caricare README.md dal repository GitHub
@@ -217,7 +198,7 @@
         }
 
         // Funzione per caricare contenuto HTML via fetch e manipolare il DOM
-        function loadContentAndHideElements(url, elementsToHide = []) {
+        function loadContentAndHideElements(url, elementsToHide = [],spaceOnTop = false) {
             const contentDiv = document.getElementById('software-content');
             contentDiv.innerHTML = '<p>Caricamento contenuto...</p>';
 
@@ -272,9 +253,11 @@
                     if (!foundContent) {
                         mainContent = doc.body.innerHTML;
                     }
+                    contentDiv.innerHTML = "";
+                    if(spaceOnTop) contentDiv.innerHTML = "<div style='min-height:30px;'></div>";
 
                     // Inserisci il contenuto pulito
-                    contentDiv.innerHTML = `
+                    contentDiv.innerHTML += `
                 <div class="fetched-content">
                     <style>
                         .fetched-content {
@@ -283,7 +266,6 @@
                         }
                         .fetched-content img {
                             max-width: 100%;
-                            height: auto;
                         }
                         .fetched-content a {
                             color: #007bff;

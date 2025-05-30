@@ -17,6 +17,11 @@ body {
     padding: 0 15px;
 }
 
+.container img {
+    max-width: 100%;
+    height: auto;
+}
+
 /* Stile per l'intestazione con gradiente */
 header {
     background: linear-gradient(to right, #c3c72c, #1e5799, #02172f);
@@ -171,7 +176,6 @@ nav {
 }
 
 .content-area {
-    flex: 1;
     padding: 20px 40px;
     background-color: #fff; /* Sfondo bianco uniforme */
 }
@@ -301,6 +305,16 @@ nav {
     padding: 40px 0;
     background-color: #FFFFFF;
 }
+
+.event-title {
+    color: #333366;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    margin-left: -100px;
+    text-align: center;
+    font-weight: bold;
+}
+
 
 .section-title {
     color: #333366;

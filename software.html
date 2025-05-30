@@ -175,25 +175,6 @@
             }
         }
 
-        // Funzione per caricare il file markdownsoftware.html
-        function loadMarkdownFile(filename) {
-            fetch(filename)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    return response.text();
-                })
-                .then(html => {
-                    document.getElementById('software-content').innerHTML = html;
-                })
-                .catch(err => {
-                    console.error("Errore nel caricamento del file markdown: ", err);
-                    document.getElementById('software-content').innerHTML =
-                        '<p>Errore nel caricamento del contenuto del software.</p>';
-                });
-        }
-
         // Funzione per caricare README.md dal repository GitHub
         function loadGitHubREADME() {
             fetch('https://raw.githubusercontent.com/UniprJRC/FSDA/master/README.md')
@@ -204,7 +185,7 @@
                     return res.text();
                 })
                 .then(text => {
-                    document.getElementById('software-content').innerHTML = marked.parse(text);
+                    document.getElementById('software-content').innerHTML = "<div style='min-height:30px;'></div>"+marked.parse(text);
                 })
                 .catch(err => {
                     console.error("Errore nel caricamento del README: ", err);
