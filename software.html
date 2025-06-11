@@ -57,12 +57,14 @@
             <div class="nav-container">
                 <ul class="nav-menu">
                     <li><a href="./index.html">Home</a></li>
-                    <li><a href="#" class="active">Software</a></li>
-                    <li><a href="./research.html">Research</a></li>
+                    <li><a href="./example.html">Example</a></li>
+                    <li><a href="./software.html" class="active">Software</a></li>
+                    <li><a href="./documentation.html">Documentation</a></li>
+                    <li><a href="./papers.html">Papers</a></li>
                     <!--<li><a href="#">Education</a></li>
                     <li><a href="#">Projects</a></li>
                     <li><a href="#">Resources</a></li>-->
-                    <li><a href="#">Events</a></li>
+                    <li><a href="./event.html">News & Events</a></li>
                 </ul>
             </div>
         </div>
@@ -70,30 +72,30 @@
     <!-- Container principale con sidebar e contenuto -->
     <div class="main-container">
         <!-- Sidebar sinistra -->
-            <aside class="sidebar">
-                <ul class="sidebar-menu">
-                    <li class="active" data-page="documentation">
-                        <a href="#" onclick="loadContent('documentation')">FSDA Documentation</a>
-                    </li>
-                    <li data-page="getting-started">
-                        <a href="#" onclick="loadContent('getting-started')">Getting Started</a>
-                    </li>
-                    <li data-page="release-note">
-                        <a href="#" onclick="loadContent('release-note')">release-note</a>
-                    </li>
-                    <li data-page="tutorials">
-                        <a href="#" onclick="loadContent('tutorials')">Tutorials</a>
-                    </li>
-                </ul>
-            </aside>
+        <aside class="sidebar">
+            <ul class="sidebar-menu">
+                <li class="active" data-page="documentation">
+                    <a href="#" onclick="loadContent('documentation')">FSDA Toolbox</a>
+                </li>
+                <li data-page="getting-started">
+                    <a href="#" onclick="loadContent('getting-started')">Getting Started</a>
+                </li>
+                <li data-page="release-note">
+                    <a href="#" onclick="loadContent('release-note')">release-note</a>
+                </li>
+                <li data-page="tutorials">
+                    <a href="#" onclick="loadContent('tutorials')">Tutorials</a>
+                </li>
+            </ul>
+        </aside>
 
-            <!-- Area contenuto principale -->
-            <main class="content-area">
-                <div id="software-content">
-                    Caricamento...
-                </div>
-            </main>
-        
+        <!-- Area contenuto principale -->
+        <main class="content-area">
+            <div id="software-content">
+                Caricamento...
+            </div>
+        </main>
+
     </div>
     <footer class="footer">
         <div class="container">
@@ -120,37 +122,39 @@
             contentDiv.innerHTML = '<p>Caricamento...</p>';
 
             const elementsToHide = [
-                        'header',                     // rimuove tutti i tag header
-                        '.header',                    // rimuove elementi con classe header
-                        '#header',                    // rimuove header per id
-                        'nav',                        // rimuove tutti i navigation
-                        '.nav',                       // rimuove nav per classe
-                        '.navigation',                // rimuove navigation per classe
-                        '#navigation',                // rimuove navigation per id
-                        'footer',                     // rimuove tutti i footer
-                        '.footer',                    // rimuove footer per classe
-                        '#footer',                    // rimuove footer per id
-                        '.sidebar',                   // rimuove sidebar per classe
-                        '#sidebar',                   // rimuove sidebar per id
-                        '.breadcrumb',                // rimuove breadcrumb
-                        '#breadcrumb',                // rimuove breadcrumb per id
-                        '.ads',                       // rimuove pubblicità
-                        '.advertisement',             // rimuove ads
-                        '.banner',                    // rimuove banner
-                        '#search',                    // rimuove ricerca
-                        '.search',                    // rimuove ricerca per classe
-                        '.social-sharing',            // rimuove condivisione social
-                        '.comments',                  // rimuove commenti
-                        '#comments',                  // rimuove commenti per id
-                        '.related-posts',             // rimuove post correlati
-                        '.widget',                    // rimuove widget
-                        '.menu',                      // rimuove menu
-                        '#menu'                       // rimuove menu per id
-                    ];
+                'header',                     // rimuove tutti i tag header
+                '.header',                    // rimuove elementi con classe header
+                '#header',                    // rimuove header per id
+                'nav',                        // rimuove tutti i navigation
+                '.nav',                       // rimuove nav per classe
+                '.navigation',                // rimuove navigation per classe
+                '#navigation',                // rimuove navigation per id
+                'footer',                     // rimuove tutti i footer
+                '.footer',                    // rimuove footer per classe
+                '#footer',                    // rimuove footer per id
+                '.sidebar',                   // rimuove sidebar per classe
+                '#sidebar',                   // rimuove sidebar per id
+                '.breadcrumb',                // rimuove breadcrumb
+                '#breadcrumb',                // rimuove breadcrumb per id
+                '.ads',                       // rimuove pubblicità
+                '.advertisement',             // rimuove ads
+                '.banner',                    // rimuove banner
+                '#search',                    // rimuove ricerca
+                '.search',                    // rimuove ricerca per classe
+                '.social-sharing',            // rimuove condivisione social
+                '.comments',                  // rimuove commenti
+                '#comments',                  // rimuove commenti per id
+                '.related-posts',             // rimuove post correlati
+                '.widget',                    // rimuove widget
+                '.menu',                      // rimuove menu
+                '#menu'                       // rimuove menu per id
+            ];
 
             switch (page) {
                 case 'documentation':
-                    loadGitHubREADME();
+                loadGitHubREADME("## Running Examples on MATLAB Online", `## FSDA
+
+This`, true);
                     break;
                 case 'getting-started':
                     loadContentAndHideElements(
@@ -176,7 +180,7 @@
         }
 
         // Funzione per caricare README.md dal repository GitHub
-        function loadGitHubREADME() {
+        function loadGitHubREADME(startHeading = null, endHeading = null, opposite = false) {
             fetch('https://raw.githubusercontent.com/UniprJRC/FSDA/master/README.md')
                 .then(res => {
                     if (!res.ok) {
@@ -185,7 +189,33 @@
                     return res.text();
                 })
                 .then(text => {
-                    document.getElementById('software-content').innerHTML = "<div style='min-height:30px;'></div>"+marked.parse(text);
+                    // Converti il Markdown in HTML
+                    console.log(text);
+                    let newText = text;
+                    if (startHeading && endHeading) 
+                    {
+                        const startIndex = text.indexOf(startHeading);
+                        const endIndex = text.indexOf(endHeading);
+                        if(opposite)
+                        {
+                            let begin = text.substring(0,startIndex);
+                            let end = text.substring(endIndex);
+                            newText  = begin + end;    
+                        }
+                        else
+                        {
+                            let newText = text.substring(startIndex,endIndex);
+                        }
+                    }
+                    const htmlContent = marked.parse(newText);
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(htmlContent, 'text/html');
+
+                    let processedHtml = doc.body.innerHTML;
+
+                    
+                    // Inserisci il risultato finale nel div
+                    document.getElementById('software-content').innerHTML = "<div style='min-height:30px;'></div>" + processedHtml;
                 })
                 .catch(err => {
                     console.error("Errore nel caricamento del README: ", err);
@@ -193,6 +223,8 @@
                         '<p>Errore nel caricamento della documentazione GitHub.</p>';
                 });
         }
+
+
 
         // Funzione per caricare contenuto HTML via fetch e manipolare il DOM
         function loadContentAndHideElements(url, elementsToHide = []) {
