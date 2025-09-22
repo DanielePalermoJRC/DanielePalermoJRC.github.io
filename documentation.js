@@ -1,5 +1,5 @@
 // Configurazione
-const EXTERNAL_URL = 'http://rosa.unipr.it/FSDA/index.html'; // Sostituisci con l'URL reale
+const EXTERNAL_URL = 'https://rosa.unipr.it/FSDA/index.html'; // Sostituisci con l'URL reale
 const TARGET_DIV_ID = 'content_container'; // ID del div da cui vuoi estrarre il contenuto
 
 // Funzione per caricare contenuto esterno
@@ -89,3 +89,4 @@ function loadContentForSection(section) {
         }
     }, 300);
 }
+
